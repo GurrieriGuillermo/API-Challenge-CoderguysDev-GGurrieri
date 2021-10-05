@@ -48,12 +48,14 @@ class Connection {
 
     public function getData($sqlstr){
         $results = $this->connection->query($sqlstr);
-        $resultArray = array();
-        foreach ($results as $key) {
-            $resultArray[] = $key;
+        if ($results != '') {
+            $resultArray = array();
+            foreach ($results as $key) {
+                $resultArray[] = $key;
+            }
+            return $this->charsetConvert($resultArray);
         }
-        return $this->charsetConvert($resultArray);
-
+        return false;
     }
 
 
@@ -67,12 +69,12 @@ class Connection {
     //INSERT 
     public function nonQueryId($sqlstr){
         $results = $this->connection->query($sqlstr);
-         $filas = $this->connection->affected_rows;
-         if($filas >= 1){
+        $filas = $this->connection->affected_rows;
+        if($filas >= 1){
             return $this->connection->insert_id;
-         }else{
-             return 0;
-         }
+        }else{
+            return 0;
+        }
     }
      
     //encriptar
