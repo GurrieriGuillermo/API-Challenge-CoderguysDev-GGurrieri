@@ -1,5 +1,31 @@
 # API Challenge
+## NRS Guillermo Gurrieri - Desarrollo en PHP8 vanilla 
 
+-------------------------
+
+#### Install 
+
+- clone the repository into root of an apache server.
+```sh
+cd /var/www/html
+git clone https://github.com/GurrieriGuillermo/API-Challenge-CoderguysDev-GGurrieri.git
+```
+- run a MySQLdump on the sql file located in the database folder 
+```sh
+mysql -u root -p restchallenge < database/sql.sql
+```
+
+- duplicate the configuration file located in class/Connection, edit the file with the corresponding database connection data
+```sh
+mv class/Connection/config.example config
+```
+
+##### *by mail send an invitation to postman with which to interact with the api*
+
+----------------
+
+
+# API Challenge
 There is a list of Activities to do in a City, they are grouped into different Categories, such as "Outdoors", "Food & Drinks", "Clubs", etc.
 For each Activity there are different Users, one of them is the Activity Organizer, who can send invitations to other Users for joining that Activity and any User can also request to join a specific Activity. In any case the invitations can be accepted or rejected.
 
