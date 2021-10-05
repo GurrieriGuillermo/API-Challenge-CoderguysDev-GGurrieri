@@ -1,8 +1,8 @@
 <?php
     require_once "../class/Connection/Connection.php";
-    require_once "../class/Services/User.php";
+    require_once "../class/Services/UserService.php";
     
-    $user = new User;
+    $user = new UserService;
     switch ($_SERVER['REQUEST_METHOD']) {
         case 'GET':
             $response = $user->get();
